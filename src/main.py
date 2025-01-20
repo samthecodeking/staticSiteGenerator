@@ -1,4 +1,5 @@
 from textnode import TextNode, TextType
+from htmlnode import HTMLNode
 
 def main():
 
@@ -13,6 +14,11 @@ def main():
     # Or a link node
     link_node = TextNode("Click here", TextType.LINK, "https://www.boot.dev")
     print(f"link_node = {link_node}") 
+
+
+    # html node test
+    html_node = HTMLNode(props={"href": "https://example.com", "target": "_blank"})
+    print(f"html_node = {html_node}")
 
 if __name__ == "__main__":
     main()
