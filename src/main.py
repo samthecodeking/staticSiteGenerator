@@ -1,5 +1,5 @@
 from textnode import TextNode, TextType
-from htmlnode import HTMLNode
+from htmlnode import HTMLNode, LeafNode
 
 def main():
 
@@ -19,6 +19,12 @@ def main():
     # html node test
     html_node = HTMLNode(props={"href": "https://example.com", "target": "_blank"})
     print(f"html_node = {html_node}")
+
+    # Leaf node test
+    leaf_node = LeafNode("Hello", "p", props={"class": "highlight"})
+    html_leaf_node = leaf_node.to_html()
+    print(f"leaf_node = {leaf_node}")
+    print(f"html_leaf_node = {html_leaf_node}")
 
 if __name__ == "__main__":
     main()
