@@ -26,5 +26,10 @@ def main():
     print(f"leaf_node = {leaf_node}")
     print(f"html_leaf_node = {html_leaf_node}")
 
+    leaf_node2 = LeafNode("Hello", "p", props={"class": "highlight", "href": "https://example.com"})
+    html_leaf_node2= leaf_node2.to_html()
+    print(f"leaf_node2 = {leaf_node2}")
+    print(f"html_leaf_node2 = {html_leaf_node2}")
+
 if __name__ == "__main__":
     main()
