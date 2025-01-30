@@ -1,5 +1,5 @@
 from textnode import TextNode, TextType
-from htmlnode import HTMLNode, LeafNode
+from htmlnode import HTMLNode, LeafNode, ParentNode
 
 def main():
 
@@ -30,6 +30,10 @@ def main():
     html_leaf_node2= leaf_node2.to_html()
     print(f"leaf_node2 = {leaf_node2}")
     print(f"html_leaf_node2 = {html_leaf_node2}")
+
+    # Parent Node test
+    parent_node = ParentNode("p",children=[LeafNode("b", "Bold text"),LeafNode(None, "Normal text"),LeafNode("i", "italic text"),LeafNode(None, "Normal text")])
+    print(f"parent_node = {parent_node}")
 
 if __name__ == "__main__":
     main()
