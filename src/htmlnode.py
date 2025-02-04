@@ -55,7 +55,7 @@ class ParentNode(HTMLNode):
         opening_tag = f"<{self.tag} {props_str}>".strip()
         closing_tag = f"</{self.tag}>"  
 
-        for child in self.children
+        for child in self.children:
             children_html = "".join(child.to_html()) 
         
         return f"{opening_tag}{children_html}{closing_tag}"
