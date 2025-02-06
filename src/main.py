@@ -34,6 +34,27 @@ def main():
     # Parent Node test
     parent_node = ParentNode("p",children=[LeafNode("b", "Bold text"),LeafNode(None, "Normal text"),LeafNode("i", "italic text"),LeafNode(None, "Normal text")])
     print(f"parent_node = {parent_node}")
+    parent_node2 = ParentNode("div", [LeafNode("Hello")])
+    print(f"parent_node2 = {parent_node2} - HTML = {parent_node2.to_html()}")
+    
+    parent_node3 = ParentNode(
+        "p",
+        [
+            LeafNode("Bold text", "b"),
+             LeafNode("Normal text"),
+            LeafNode("italic text", "i")
+        ],
+        {"class": "greeting"}
+    )
+    print(f"parent_node3 = {parent_node3} - HTML = {parent_node3.to_html()}")
+
+    nested = ParentNode(
+        "div",
+        [
+                ParentNode("p", [LeafNode("Hello")])
+        ]
+    )
+    print(f"nested = {nested} - HTML = {nested.to_html()}")
 
 if __name__ == "__main__":
     main()
