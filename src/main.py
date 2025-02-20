@@ -1,5 +1,6 @@
 from textnode import TextNode, TextType
 from htmlnode import HTMLNode, LeafNode, ParentNode
+from converters import text_node_to_html_node
 
 def main():
 
@@ -55,6 +56,12 @@ def main():
         ]
     )
     print(f"nested = {nested} - HTML = {nested.to_html()}")
+
+    #convert text to html test
+    textnode = TextNode("Testing 123", TextType.BOLD)
+    print(f"textnode = {textnode}")
+    print(f"Converted = {text_node_to_html_node(textnode)}")
+
 
 if __name__ == "__main__":
     main()
