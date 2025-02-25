@@ -9,12 +9,12 @@ def text_node_to_html_node(text_node):
         case TextType.BOLD:
             return LeafNode(text_node.text, "b")
         case TextType.ITALIC:
-            return LeafNode("i", text_node.text)
+            return LeafNode(text_node.text, "i")
         case TextType.CODE:
-            return LeafNode("code", text_node.text)
+            return LeafNode(text_node.text, "code")
         case TextType.LINK:
-            return LeafNode("a", text_node.text, props={"href": text_node.url})
+            return LeafNode(text_node.text, "a", props={"href": text_node.url})
         case TextType.IMAGE:
-            return LeafNode("img", "", props={"alt": text_node.text, "src": text_node.url})
-        case TextType._:
-            raise Exception("not a valid text type")
+            return LeafNode("", "img", props={"alt": text_node.text, "src": text_node.url})
+        case _:
+            raise ValueError("not a valid text type")
