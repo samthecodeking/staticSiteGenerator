@@ -18,3 +18,6 @@ def text_node_to_html_node(text_node):
             return LeafNode("", "img", props={"alt": text_node.text, "src": text_node.url})
         case _:
             raise ValueError("not a valid text type")
+        
+def split_nodes_delimiter(old_nodes, delimiter, text_type):
+    
