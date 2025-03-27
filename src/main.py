@@ -1,6 +1,6 @@
 from textnode import TextNode, TextType
 from htmlnode import HTMLNode, LeafNode, ParentNode
-from converters import text_node_to_html_node
+from converters import text_node_to_html_node, split_nodes_delimiter
 
 def main():
 
@@ -61,7 +61,6 @@ def main():
     textnode = TextNode("Testing 123", TextType.BOLD)
     print(f"textnode = {textnode}")
     print(f"Converted = {text_node_to_html_node(textnode)}")
-
 
 if __name__ == "__main__":
     main()
